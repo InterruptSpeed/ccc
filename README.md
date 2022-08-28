@@ -1,2 +1,2 @@
 # ccc
-code repo for C++ Crash Course
+code repo for [C++ Crash Course](https://ccc.codes/)
