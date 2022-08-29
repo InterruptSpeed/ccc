@@ -6,4 +6,4 @@ add_executable(dedication
   main.cpp
 )
 
-set_property(TARGET dedication PROPERTY CXX_STANDARD 11)
+set_property(TARGET dedication PROPERTY CXX_STANDARD 17)
