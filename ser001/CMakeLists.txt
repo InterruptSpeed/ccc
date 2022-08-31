@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.24 FATAL_ERROR)
+
+set(CMAKE_OSX_ARCHITECTURES "arm64" CACHE INTERNAL "" FORCE)
+
+project(ser01 VERSION 0.0.1 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+set(Boost_USE_STATIC_LIBS ON)
+set(Boost_USE_MULTITHREADED ON)
+find_package(Boost REQUIRED COMPONENTS system serialization)
+
+add_executable(ser01
+  main.cpp
+)
+target_include_directories(ser01 PUBLIC ${Boost_INCLUDE_DIRS})
+target_link_libraries(ser01 ${Boost_LIBRARIES})
